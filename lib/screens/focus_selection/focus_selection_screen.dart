@@ -120,9 +120,9 @@ class _FocusSelectionScreenState extends State<FocusSelectionScreen> {
                         backgroundColor: AppColors.warning.withValues(alpha: 0.08),
                         border: Border.all(color: AppColors.warning.withValues(alpha: 0.4), width: 1.0),
                         padding: const EdgeInsets.all(12.0),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             Row(
                               children: [
                                 Icon(Icons.info_outline, color: AppColors.warning, size: 18),
