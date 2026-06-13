@@ -38,15 +38,54 @@ jobs:
 
       - name: Patch Google Mobile Ads Gradle Issue
         run: |
-          echo "=== Searching for google_mobile_ads build.gradle in HOME and opt/hostedtoolcache ==="
-          find "$HOME" -name "build.gradle" 2>/dev/null | grep "google_mobile_ads" | while read -r file; do
-            echo "Found and patching: $file"
-            sed -i 's/configurations\.all/configurations\.configureEach/g' "$file"
-          done
-          find /opt -name "build.gradle" 2>/dev/null | grep "google_mobile_ads" | while read -r file; do
-            echo "Found and patching in opt: $file"
-            sed -i 's/configurations\.all/configurations\.configureEach/g' "$file"
-          done
+          python3 -c "
+          import os
+
+          def patch_file(filepath):
+              print(f'Patching file: {filepath}')
+              with open(filepath, 'r') as f:
+                  content = f.read()
+              idx = content.find('configurations')
+              if idx == -1:
+                  print('No configurations block found.')
+                  return
+              brace_count = 0
+              opened = False
+              end_idx = -1
+              for i in range(idx, len(content)):
+                  if content[i] == '{':
+                      brace_count += 1
+                      opened = True
+                  elif content[i] == '}':
+                      brace_count -= 1
+                      if opened and brace_count == 0:
+                          end_idx = i + 1
+                          break
+              if end_idx != -1:
+                  removed_block = content[idx:end_idx]
+                  print(f'Removing block:\n{removed_block}')
+                  patched = content[:idx] + '/* Removed configurations block */' + content[end_idx:]
+                  with open(filepath, 'w') as f:
+                      f.write(patched)
+                  print('Successfully patched file.')
+              else:
+                  print('Failed to find matching closing brace.')
+
+          print('=== Searching for google_mobile_ads build.gradle files ===')
+          found_any = False
+          search_paths = [os.path.expanduser('~/.pub-cache'), '/opt']
+          for search_path in search_paths:
+              if not os.path.exists(search_path):
+                  continue
+              for root, dirs, files in os.walk(search_path):
+                  for f in files:
+                      if f == 'build.gradle' and 'google_mobile_ads' in root:
+                          filepath = os.path.join(root, f)
+                          patch_file(filepath)
+                          found_any = True
+          if not found_any:
+              print('Warning: No google_mobile_ads build.gradle files found during search!')
+          "
 
       - name: Run Linter/Analyzer
         run: flutter analyze
