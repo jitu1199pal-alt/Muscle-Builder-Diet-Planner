@@ -10,13 +10,13 @@ class ProgressCard extends StatelessWidget {
   final IconData icon;
 
   const ProgressCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     required this.percentage,
     required this.progressColor,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class ProgressCard extends StatelessWidget {
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
-                  color: progressColor.withOpacity(0.1),
+                  color: progressColor.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(

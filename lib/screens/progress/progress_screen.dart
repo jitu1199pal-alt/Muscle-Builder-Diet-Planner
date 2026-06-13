@@ -6,7 +6,7 @@ import '../../providers/progress_provider.dart';
 import '../../widgets/custom_card.dart';
 
 class ProgressScreen extends StatefulWidget {
-  const ProgressScreen({Key? key}) : super(key: key);
+  const ProgressScreen({super.key});
 
   @override
   State<ProgressScreen> createState() => _ProgressScreenState();
@@ -68,7 +68,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
           children: [
             // Streak panel
             CustomCard(
-              backgroundColor: AppColors.primary.withOpacity(0.06),
+              backgroundColor: AppColors.primary.withValues(alpha: 0.06),
               child: Row(
                 children: [
                   const Icon(Icons.workspace_premium, color: Colors.amber, size: 40),
@@ -97,7 +97,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
             // Line chart weight trend (Custom Painted for offline robustness and layout perfection)
             Text(
               "Weight Tracking Trend",
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withOpacity(0.9)),
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withValues(alpha: 0.9)),
             ),
             const SizedBox(height: 10.0),
             CustomCard(
@@ -125,7 +125,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
             // Log new weight row
             Text(
               "Log Today's Weight",
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withOpacity(0.9)),
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withValues(alpha: 0.9)),
             ),
             const SizedBox(height: 10.0),
             Row(
@@ -159,7 +159,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
             // Static Biometrics list
             Text(
               "Biometrics Blueprint",
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withOpacity(0.9)),
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withValues(alpha: 0.9)),
             ),
             const SizedBox(height: 10.0),
             CustomCard(

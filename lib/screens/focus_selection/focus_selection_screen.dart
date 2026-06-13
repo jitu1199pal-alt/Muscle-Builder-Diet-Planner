@@ -16,7 +16,7 @@ class FocusSelectionScreen extends StatefulWidget {
   final String goal;
 
   const FocusSelectionScreen({
-    Key? key,
+    super.key,
     required this.age,
     required this.gender,
     required this.height,
@@ -24,7 +24,7 @@ class FocusSelectionScreen extends StatefulWidget {
     required this.foodPreference,
     required this.activityLevel,
     required this.goal,
-  }) : super(key: key);
+  });
 
   @override
   State<FocusSelectionScreen> createState() => _FocusSelectionScreenState();
@@ -91,7 +91,7 @@ class _FocusSelectionScreenState extends State<FocusSelectionScreen> {
                             },
                             child: CustomCard(
                               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                              backgroundColor: isSel ? AppColors.primary.withOpacity(0.08) : AppColors.cardBg,
+                              backgroundColor: isSel ? AppColors.primary.withValues(alpha: 0.08) : AppColors.cardBg,
                               border: Border.all(
                                 color: isSel ? AppColors.primary : AppColors.borderSubtle,
                                 width: 1.5,
@@ -117,8 +117,8 @@ class _FocusSelectionScreenState extends State<FocusSelectionScreen> {
                     if (isFaceFat) ...[
                       const SizedBox(height: 16.0),
                       CustomCard(
-                        backgroundColor: AppColors.warning.withOpacity(0.08),
-                        border: Border.all(color: AppColors.warning.withOpacity(0.4), width: 1.0),
+                        backgroundColor: AppColors.warning.withValues(alpha: 0.08),
+                        border: Border.all(color: AppColors.warning.withValues(alpha: 0.4), width: 1.0),
                         padding: const EdgeInsets.all(12.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

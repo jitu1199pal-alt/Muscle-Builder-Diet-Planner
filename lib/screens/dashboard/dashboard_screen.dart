@@ -9,7 +9,7 @@ import '../settings/settings_screen.dart';
 import 'home_tab.dart'; // we will write this next
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  const DashboardScreen({super.key});
 
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();

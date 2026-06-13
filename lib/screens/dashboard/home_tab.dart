@@ -7,7 +7,7 @@ import '../../widgets/custom_card.dart';
 import 'package:intl/intl.dart';
 
 class HomeTab extends StatelessWidget {
-  const HomeTab({Key? key}) : super(key: key);
+  const HomeTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class HomeTab extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.1),
+                color: AppColors.primary.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: const Icon(Icons.flash_on, color: AppColors.primary, size: 20),
@@ -62,9 +62,9 @@ class HomeTab extends StatelessWidget {
             margin: const EdgeInsets.only(right: 16, top: 12, bottom: 12),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
             decoration: BoxDecoration(
-              color: Colors.amber.withOpacity(0.12),
+              color: Colors.amber.withValues(alpha: 0.12),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.amber.withOpacity(0.3), width: 1.0),
+              border: Border.all(color: Colors.amber.withValues(alpha: 0.3), width: 1.0),
             ),
             child: Row(
               children: [
@@ -87,7 +87,7 @@ class HomeTab extends StatelessWidget {
             // Target highlights bento style
             Text(
               "Your Goals Overview",
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withOpacity(0.9)),
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withValues(alpha: 0.9)),
             ),
             const SizedBox(height: 12.0),
             
@@ -144,7 +144,7 @@ class HomeTab extends StatelessWidget {
                     width: 50,
                     height: 50,
                     decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.1),
+                      color: AppColors.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Icon(Icons.scale, color: AppColors.primary),
@@ -199,8 +199,8 @@ class HomeTab extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: const [
+                      const Row(
+                        children: [
                           Icon(Icons.local_drink, color: Colors.blueAccent, size: 20),
                           SizedBox(width: 8),
                           Text("Hydration Tracker", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
@@ -252,12 +252,12 @@ class HomeTab extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [AppColors.primary.withOpacity(0.08), Colors.transparent],
+                  colors: [AppColors.primary.withValues(alpha: 0.08), Colors.transparent],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppColors.primary.withOpacity(0.12), width: 1.0),
+                border: Border.all(color: AppColors.primary.withValues(alpha: 0.12), width: 1.0),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

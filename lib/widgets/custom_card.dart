@@ -9,13 +9,13 @@ class CustomCard extends StatelessWidget {
   final Border? border;
 
   const CustomCard({
-    Key? key,
+    super.key,
     required this.child,
     this.padding,
     this.backgroundColor,
     this.borderRadius,
     this.border,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

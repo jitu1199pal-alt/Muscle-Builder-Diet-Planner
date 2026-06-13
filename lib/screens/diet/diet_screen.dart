@@ -8,7 +8,7 @@ import '../../widgets/diet_card.dart';
 import '../../widgets/custom_card.dart';
 
 class DietScreen extends StatelessWidget {
-  const DietScreen({Key? key}) : super(key: key);
+  const DietScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class DietScreen extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
-                          color: AppColors.warning.withOpacity(0.1),
+                          color: AppColors.warning.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
@@ -114,12 +114,12 @@ class DietScreen extends StatelessWidget {
             // Avoid list cards (Rule 16)
             Text(
               "Foods to Avoid (Athletic Restriction)",
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withOpacity(0.9)),
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withValues(alpha: 0.9)),
             ),
             const SizedBox(height: 8.0),
             CustomCard(
               backgroundColor: const Color(0xFF221515),
-              border: Border.all(color: Colors.red.withOpacity(0.2), width: 1.0),
+              border: Border.all(color: Colors.red.withValues(alpha: 0.2), width: 1.0),
               padding: const EdgeInsets.all(12.0),
               child: Column(
                 children: diet.avoidList.map((avoidItem) {
@@ -144,7 +144,7 @@ class DietScreen extends StatelessWidget {
             // Meals header
             Text(
               "Daily Target Meals",
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withOpacity(0.9)),
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withValues(alpha: 0.9)),
             ),
             const SizedBox(height: 8.0),
 

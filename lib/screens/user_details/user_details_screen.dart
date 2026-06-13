@@ -4,7 +4,7 @@ import '../../widgets/custom_button.dart';
 import '../goal_selection/goal_selection_screen.dart';
 
 class UserDetailsScreen extends StatefulWidget {
-  const UserDetailsScreen({Key? key}) : super(key: key);
+  const UserDetailsScreen({super.key});
 
   @override
   State<UserDetailsScreen> createState() => _UserDetailsScreenState();
@@ -86,7 +86,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                         height: 50,
                         margin: const EdgeInsets.only(right: 8.0),
                         decoration: BoxDecoration(
-                          color: _selectedGender == g ? AppColors.primary.withOpacity(0.12) : AppColors.cardBg,
+                          color: _selectedGender == g ? AppColors.primary.withValues(alpha: 0.12) : AppColors.cardBg,
                           border: Border.all(
                             color: _selectedGender == g ? AppColors.primary : AppColors.borderSubtle,
                             width: 1.5,
@@ -187,7 +187,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                 const Text("Activity Level", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 8.0),
                 DropdownButtonFormField<String>(
-                  value: _selectedActivityLevel,
+                  initialValue: _selectedActivityLevel,
                   dropdownColor: AppColors.cardBg,
                   decoration: const InputDecoration(),
                   items: _activities.map((lvl) => DropdownMenuItem(

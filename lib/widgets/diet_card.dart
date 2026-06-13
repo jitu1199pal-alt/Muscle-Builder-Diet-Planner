@@ -9,11 +9,11 @@ class DietCard extends StatelessWidget {
   final VoidCallback onToggle;
 
   const DietCard({
-    Key? key,
+    super.key,
     required this.meal,
     required this.isFollowed,
     required this.onToggle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class DietCard extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       backgroundColor: isFollowed ? const Color(0xFF13221C) : AppColors.cardBg,
       border: Border.all(
-        color: isFollowed ? AppColors.success.withOpacity(0.3) : AppColors.borderSubtle,
+        color: isFollowed ? AppColors.success.withValues(alpha: 0.3) : AppColors.borderSubtle,
         width: 1.0,
       ),
       child: Column(
@@ -33,7 +33,7 @@ class DietCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withOpacity(0.12),
+                  color: AppColors.primary.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(

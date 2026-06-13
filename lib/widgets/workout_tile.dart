@@ -9,11 +9,11 @@ class WorkoutTile extends StatelessWidget {
   final VoidCallback onToggle;
 
   const WorkoutTile({
-    Key? key,
+    super.key,
     required this.exercise,
     required this.isCompleted,
     required this.onToggle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class WorkoutTile extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       backgroundColor: isCompleted ? const Color(0xFF13221C) : AppColors.cardBg,
       border: Border.all(
-        color: isCompleted ? AppColors.success.withOpacity(0.3) : AppColors.borderSubtle,
+        color: isCompleted ? AppColors.success.withValues(alpha: 0.3) : AppColors.borderSubtle,
         width: 1.0,
       ),
       child: Row(

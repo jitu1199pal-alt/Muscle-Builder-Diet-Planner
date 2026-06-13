@@ -13,14 +13,14 @@ class GoalSelectionScreen extends StatefulWidget {
   final String activityLevel;
 
   const GoalSelectionScreen({
-    Key? key,
+    super.key,
     required this.age,
     required this.gender,
     required this.height,
     required this.weight,
     required this.foodPreference,
     required this.activityLevel,
-  }) : super(key: key);
+  });
 
   @override
   State<GoalSelectionScreen> createState() => _GoalSelectionScreenState();
@@ -97,7 +97,7 @@ class _GoalSelectionScreenState extends State<GoalSelectionScreen> {
                           });
                         },
                         child: CustomCard(
-                          backgroundColor: isSel ? AppColors.primary.withOpacity(0.08) : AppColors.cardBg,
+                          backgroundColor: isSel ? AppColors.primary.withValues(alpha: 0.08) : AppColors.cardBg,
                           border: Border.all(
                             color: isSel ? AppColors.primary : AppColors.borderSubtle,
                             width: 1.5,

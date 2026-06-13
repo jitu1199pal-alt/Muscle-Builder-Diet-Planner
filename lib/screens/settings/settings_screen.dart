@@ -7,7 +7,7 @@ import '../../widgets/custom_button.dart';
 import '../onboarding/onboarding_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({Key? key}) : super(key: key);
+  const SettingsScreen({super.key});
 
   void _resetApp(BuildContext context, UserProvider userProv) async {
     showDialog(
@@ -69,7 +69,7 @@ class SettingsScreen extends StatelessWidget {
             // Specs metadata block
             Text(
               "System Specifications",
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withOpacity(0.9)),
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withValues(alpha: 0.9)),
             ),
             const SizedBox(height: 10.0),
             CustomCard(
@@ -89,7 +89,7 @@ class SettingsScreen extends StatelessWidget {
             if (user != null) ...[
               Text(
                 "Biometrics Summary",
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withOpacity(0.9)),
+                style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppColors.primaryText.withValues(alpha: 0.9)),
               ),
               const SizedBox(height: 10.0),
               CustomCard(
@@ -109,7 +109,7 @@ class SettingsScreen extends StatelessWidget {
             // Reset mechanism (Strict Height Button 56px Rule)
             CustomButton(
               text: "Clear & Purge Local Data",
-              backgroundColor: Colors.red[900]!.withOpacity(0.15),
+              backgroundColor: Colors.red[900]!.withValues(alpha: 0.15),
               textColor: Colors.redAccent,
               onPressed: () => _resetApp(context, userProv),
             ),
