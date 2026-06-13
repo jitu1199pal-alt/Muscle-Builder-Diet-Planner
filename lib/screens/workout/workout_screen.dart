@@ -4,11 +4,10 @@ import '../../core/theme/colors.dart';
 import '../../providers/user_provider.dart';
 import '../../providers/workout_provider.dart';
 import '../../widgets/workout_tile.dart';
-import '../../widgets/custom_card.dart';
 import 'package:intl/intl.dart';
 
 class WorkoutScreen extends StatefulWidget {
-  const WorkoutScreen({Key? key}) : super(key: key);
+  const WorkoutScreen({super.key});
 
   @override
   State<WorkoutScreen> createState() => _DashboardWorkoutState();
@@ -46,7 +45,6 @@ class _DashboardWorkoutState extends State<WorkoutScreen> {
     final List<String> currentExIds = activeDayWorkout.exercises.map((e) => e.id).toList();
     final int doneCount = workProv.getCompletedCountForDay(todayKey, currentExIds);
     final int totalCount = activeDayWorkout.exercises.length;
-    final double completionRatio = totalCount > 0 ? (doneCount / totalCount) : 0.0;
 
     return Scaffold(
       backgroundColor: AppColors.background,

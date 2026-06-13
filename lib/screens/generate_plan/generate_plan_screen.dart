@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/colors.dart';
 import '../../providers/user_provider.dart';
-import '../../widgets/loading_widget.dart';
 import '../../ads/admob_service.dart';
 import '../dashboard/dashboard_screen.dart';
 
@@ -17,7 +16,7 @@ class GeneratePlanScreen extends StatefulWidget {
   final String focus;
 
   const GeneratePlanScreen({
-    Key? key,
+    super.key,
     required this.age,
     required this.gender,
     required this.height,
@@ -26,7 +25,7 @@ class GeneratePlanScreen extends StatefulWidget {
     required this.activityLevel,
     required this.goal,
     required this.focus,
-  }) : super(key: key);
+  });
 
   @override
   State<GeneratePlanScreen> createState() => _GeneratePlanScreenState();

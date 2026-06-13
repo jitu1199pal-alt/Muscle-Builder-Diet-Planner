@@ -4,7 +4,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 class AdmobService {
   AdmobService._();
 
-  static bool _useRealAds = false;
+  static const bool _useRealAds = false;
 
   // Real or test ad units mapped properly
   static String get bannerAdUnitId {
