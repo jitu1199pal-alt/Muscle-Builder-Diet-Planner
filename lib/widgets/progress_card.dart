@@ -23,7 +23,7 @@ class ProgressCard extends StatelessWidget {
     return CustomCard(
       padding: const EdgeInsets.all(14.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.between,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [

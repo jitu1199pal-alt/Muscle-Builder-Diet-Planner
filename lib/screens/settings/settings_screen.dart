@@ -130,7 +130,7 @@ class SettingsScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.between,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(name, style: const TextStyle(color: AppColors.secondaryText, fontSize: 12)),
           Text(value, style: const TextStyle(color: AppColors.primaryText, fontSize: 12, fontWeight: FontWeight.bold)),
