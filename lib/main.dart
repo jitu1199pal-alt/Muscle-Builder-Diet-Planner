@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// Trigger changes reload in Git watcher
 import 'package:provider/provider.dart';
 import 'core/theme/app_theme.dart';
 import 'providers/user_provider.dart';
