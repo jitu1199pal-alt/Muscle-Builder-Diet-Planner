@@ -1,0 +1,6 @@
+{
+  "name": "Muscle Builder & Diet Planner",
+  "description": "A high-performance workout and nutrition planning platform powered by Gemini AI, featuring precise macro calculations, progress trackers, and complete mobile app development roadmaps.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
