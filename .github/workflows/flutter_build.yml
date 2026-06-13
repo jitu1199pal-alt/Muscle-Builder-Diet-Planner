@@ -36,6 +36,10 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
+      - name: Patch Google Mobile Ads Gradle Issue
+        run: |
+          find ~/.pub-cache -name "build.gradle" -path "*/google_mobile_ads*/android/build.gradle" -exec sed -i 's/configurations\.all/configurations\.configureEach/g' {} +
+
       - name: Run Linter/Analyzer
         run: flutter analyze
 
